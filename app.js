@@ -1,15 +1,12 @@
 var tableData = data;
 
 // YOUR CODE HERE!
-
-//Select tbody HTML Elements
 var tbody = d3.select("tbody");
 
+function createtable (data) {
 
-function createtable (data){
-// Clears out table and & populate with filtered search
 tbody.html("")
-//update each cell's text with UFO Sighting Value
+
 data.forEach(function(d){
     var row = tbody.append("tr");
     Object.entries(d).forEach(function([key, value]){
@@ -31,29 +28,13 @@ var country = d3.select("#country");
 var shape = d3.select("#shape");
 
 
-
-// Clear inout value ??
-
-// // clear the input value
-// d3.select("#datetime").node().value = ""
-
-
-
-//Get the value property of the input element
 var inputValue = input.property("value");
-
 var cityValue = city.property("value");
-
 var stateValue = state.property("value");
-
 var countryValue = country.property("value");
-
 var shapeValue = shape.property("value");
-console.log(shapeValue);
-console.log(stateValue);
 
-// Filter data based on user input
-//Check if value exists
+
 if (inputValue){
 tableData = tableData.filter(tableData => tableData.datetime === inputValue);
 createtable(tableData)
