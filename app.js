@@ -9,8 +9,7 @@ tbody.html("")
 
 data.forEach(function(d){
     var row = tbody.append("tr");
-    Object.entries(d).forEach(function([key, value]){
-    console.log(key, value);
+    Object.entries(d).forEach(function([key, value]) {
     var cell = tbody.append("td");
     cell.text(value);
 });
@@ -18,8 +17,8 @@ data.forEach(function(d){
 }
 
 createtable(tableData)
-var submit_button = d3.select("#filter-btn");
-submit_button.on("click", function(){
+var button = d3.select("#filter-btn");
+button.on("click", function(){
      d3.event.preventDefault();
 var input = d3.select("#datetime");
 var city = d3.select("#city");
